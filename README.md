@@ -26,27 +26,27 @@
 
 1. `list` - вивести список контактів.
 
-   ```bash
-   node index.js --action list
-   ```
+    ```bash
+    node index.js --action list
+    ```
 
 2. `get` - отримати контакт за його ідентифікатором.
 
-   ```bash
-      node index.js --action get --id <id>
-   ```
+    ```bash
+       node index.js --action get --id <id>
+    ```
 
 3. `add` - додати новий контакт.
 
-   ```bash
-      node index.js --action add --name <name> --email <email> --phone <phone>
-   ```
+    ```bash
+       node index.js --action add --name <name> --email <email> --phone <phone>
+    ```
 
 4. `remove` - видалити контакт за його ідентифікатором.
 
-   ```bash
-      node index.js --action remove --id <id>
-   ```
+    ```bash
+       node index.js --action remove --id <id>
+    ```
 
 Зверніть увагу, що ви повинні замінити `<id>`, `<name>`, `<email>` та `<phone>` на відповідні значення.
 
@@ -58,33 +58,32 @@
 
 1. Отримуємо і виводимо весь список контактів у вигляді таблиці
 
-   ```bash
-   node index.js --action="list
-   ```
+    ```bash
+    node index.js --action="list
+    ```
 
-   ![list](./pictures/list.png)
+    ![list](./pictures/list.png)
 
 2. Отримуємо контакт по id і виводимо у консоль об'єкт контакту або null, якщо контакту з таким id не існує.
 
-   ```bash
-   node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6
-   ```
+    ```bash
+    node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6
+    ```
 
-   ![list](./pictures/get.png)
+    ![get](./pictures/get.png)
 
 3. Додаємо контакт та виводимо в консоль об'єкт новоствореного контакту.
 
-   ```bash
-   node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22
-   ```
+    ```bash
+    node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22
+    ```
 
-   ![list](./pictures/add.png)
-
+    ![add](./pictures/add.png)
 
 4. Видаляємо контакт та виводимо в консоль об'єкт видаленого контакту або null, якщо контакту з таким id не існує.
 
-   ```bash
-   node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
-   ```
+    ```bash
+    node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
+    ```
 
-   ![list](./pictures/remove.png)
+    ![remove](./pictures/remove.png)
