@@ -1,0 +1,17 @@
+{
+  "name": "Node CLI interface",
+  "type": "module",
+  "homepage": "https://angelkapv81.github.io/goit-node-hw-01/",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^11.0.0",
+    "i": "^0.3.7",
+    "nodemon": "^2.0.22",
+    "npm": "^9.7.2",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  }
+}
