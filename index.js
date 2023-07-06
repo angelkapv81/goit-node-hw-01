@@ -1,3 +1,5 @@
+// index.js
+
 import * as contacts from "./contacts.js";
 import { Command } from "commander";
 import colors from "colors";
@@ -15,54 +17,34 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-function invokeAction({ action, id, name, email, phone }) {
-  switch (action) {
-    case "list":
-      contacts
-        .listContacts()
-        .then((contacts) => {
-          console.table(contacts);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      break;
+async function invokeAction({ action, id, name, email, phone }) {
+  try {
+    switch (action) {
+      case "list":
+        const list = await contacts.ListContacts();
+        console.table(list);
+        break;
 
-    case "get":
-      contacts
-        .getContactById(id)
-        .then((contact) => {
-          console.table(contact);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      break;
+      case "get":
+        const contact = await contacts.GetContactById(id);
+        console.table(contact);
+        break;
 
-    case "add":
-      contacts
-        .addContact(name, email, phone)
-        .then((contact) => {
-          console.table(contact);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      break;
+      case "add":
+        const newContact = await contacts.AddContact(name, email, phone);
+        console.table(newContact);
+        break;
 
-    case "remove":
-      contacts
-        .removeContact(id)
-        .then((contact) => {
-          console.table(contact);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      break;
+      case "remove":
+        const removedContact = await contacts.RemoveContact(id);
+        console.table(removedContact);
+        break;
 
-    default:
-      console.warn("Unknown action type!".brightRed);
+      default:
+        console.warn("Unknown action type!".brightRed);
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 
