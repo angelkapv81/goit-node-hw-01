@@ -5,6 +5,11 @@ import { v4 as uuid } from "uuid";
 
 const contactsPath = "./db/contacts.json";
 
+/**
+ * Функція з обробкою помилок
+ * @param {Function} func - Асинхронна функція, яку потрібно виконати
+ * @returns {Promise} Об'єкт Promise, який містить результат виконання або null у разі помилки
+ */
 async function withErrorHandling(func) {
     try {
         return await func;
